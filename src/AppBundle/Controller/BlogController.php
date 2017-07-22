@@ -1,7 +1,11 @@
 <?php
 
+
+
 namespace AppBundle\Controller;
 
+//on commence par ajouter
+use AppBundle\Entity\BlogPost;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
@@ -9,14 +13,17 @@ use Symfony\Component\HttpFoundation\Request;
 class BlogController extends Controller
 {
     /**
-     * @Route("/blog", name="home")
+     * @Route("/", name="home")
      */
     public function listAction()
     {
-        // replace this example code with whatever you need
-        return $this->render('default/index.html.twig', [
-            'base_dir' => realpath($this->getParameter('kernel.project_dir')).DIRECTORY_SEPARATOR,
-        ]);
+        $blogposts = $this->getDoctrine()
+            ->getRepository('AppBundle:BlogPost') //récupère le dépot
+            ->findAll(); //
+
+        return $this->render('blog/index.html.twig', array(
+            'blogpost' => $blogposts
+        ));
 
     }
 

@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    {% for blogpostitem in blogpost %}
+    <div class="row">
+        <div class="col-md-4 col-sm-4">
+            <h3>{{ blogpostitem.title }}</h3>
+            <p>{{blogpostitem.body}}</p>
+        </div>
+    </div>
+    {% endfor %}
+{% endblock %}
+
