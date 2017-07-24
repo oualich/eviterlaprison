@@ -17,84 +17,17 @@ use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 class HomeController extends Controller
 {
     /**
-     * @Route("/s", name="home")
+     * @Route("/", name="home")
      */
     public function listAction()
     {
         $blogposts = $this->getDoctrine()
             ->getRepository('AppBundle:BlogPost') //récupère le dépot
-            ->findAll(); //
+            ->findBy(array(), null, 2, null); //
 
-        return $this->render('blog/index.html.twig', array(
+        return $this->render('home/home.html.twig', array(
             'blogpost' => $blogposts
         ));
 
-    }
-
-
-    /**
-     * @Route("/blog/create", name="create_blog_post")
-     */
-    public function createAction(Request $request)
-    {
-        // replace this example code with whatever you need
-        $blogpost = new BlogPost;
-
-        $form = $this->createFormBuilder($blogpost) //création du formulaire
-        ->add('title', TextType::class, array('label'=> 'Titre', 'attr' => array('class' => 'form-control', 'style' => 'margin-bottom:15px')) )
-        ->add('body', TextareaType::class, array('label'=> 'Texte', 'attr' => array('class' => 'form-control', 'style' => 'margin-bottom:15px')) )
-        ->add('save', SubmitType::class, array('label'=> 'Créer un article', 'attr' => array('class' => 'btn btn-primary', 'style' => 'margin-bottom:15px')) )
-
-            ->getForm();
-
-        $form->handleRequest($request);
-
-        if($form->isSubmitted() && $form->isValid()){
-            //récupérer les données
-            $title = $form ['title']->getData();
-            $body = $form ['body']->getData();
-
-            $blogpost->setTitle($title);
-            $blogpost->setbody($body);
-
-            //récupérer l'entité
-            $em = $this->getDoctrine()->getManager();
-
-            //traite les nouvelles entités en base de données
-            $em->persist($blogpost);
-
-            $em->flush();
-
-            $this->addFlash(
-                'notice',
-                'Article Ajouté!'
-            );
-
-            return $this->redirectToRoute('home'); //rediriger msg vers une page
-        }
-
-        return $this->render('blog/create_blog.html.twig', array(
-            'form'=>$form->createView()
-        ));
-    }
-
-
-    /**
-     * @Route("/blog/edit/{id}", name="edit_blog_post")
-     */
-    public function editAction($id, Request $request)
-    {
-        // replace this example code with whatever you need
-        return $this->render('blog/edit_blog.html.twig');
-    }
-
-
-    /**
-     * @Route("/blog/details/{id}", name="details_blog_post")
-     */
-    public function detailsAction($id)
-    {
-        // replace this example code with whatever you need
-        return $this->render('blog/details_blog.html.twig');
     }
 }

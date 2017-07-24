@@ -25,7 +25,7 @@ class BlogController extends Controller
             ->getRepository('AppBundle:BlogPost') //récupère le dépot
             ->findAll(); //
 
-        return $this->render('blog/index.html.twig', array(
+        return $this->render('blog/blog.html.twig', array(
             'blogpost' => $blogposts
         ));
 
@@ -80,7 +80,7 @@ class BlogController extends Controller
 
 
     /**
-     * @Route("/blog/edit/{id}", name="edit_blog_post")
+     * @Route("/blog/edit", name="edit_blog_post")
      */
     public function editAction($id, Request $request)
     {
@@ -90,11 +90,27 @@ class BlogController extends Controller
 
 
     /**
-     * @Route("/blog/details/{id}", name="details_blog_post")
+     * @Route("/blog/details/", name="details_blog_post")
      */
-    public function detailsAction($id)
+    public function detailsAction()
     {
         // replace this example code with whatever you need
         return $this->render('blog/details_blog.html.twig');
+    }
+        /**
+     * @Route("/blog/nous", name="nous_blog_post")
+     */
+    public function nousAction()
+    {
+        // replace this example code with whatever you need
+        return $this->render('blog/nous_blog.html.twig');
+    }
+     /**
+     * @Route("/blog/contact", name="contact_blog_post")
+     */
+    public function contactAction()
+    {
+        // replace this example code with whatever you need
+                return $this->render('blog/contact_blog.html.twig');
     }
 }
