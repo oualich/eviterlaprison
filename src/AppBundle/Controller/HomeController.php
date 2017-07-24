@@ -14,10 +14,10 @@ use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 
 
-class BlogController extends Controller
+class HomeController extends Controller
 {
     /**
-     * @Route("/blog", name="blog")
+     * @Route("/s", name="home")
      */
     public function listAction()
     {

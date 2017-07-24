@@ -77,5 +77,10 @@ class Category
     {
         return $this->blogPosts;
     }
+
+    public function __toString()
+    {
+        return (string) $this->getName();
+    }
 }
 
