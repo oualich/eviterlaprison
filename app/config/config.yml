@@ -43,7 +43,7 @@ doctrine:
     dbal:
         driver: pdo_mysql
         host: '%database_host%'
-        port: '%database_port%'
+        port: '8889'
         dbname: 'eviterlaprison'
         user: 'root'
         password: 'root'
