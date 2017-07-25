@@ -1,0 +1,23 @@
+.card {
+  margin-bottom: 20px; 
+
+  &__container {
+    width: 80%; 
+    margin: 0 auto; 
+  }
+}
+
+.blog {
+  
+  &__header{
+    display: flex;
+    justify-content: space-around;
+    width: 80%; 
+    margin: 0 auto;
+  }
+
+  &__editBtn {
+    margin-top: 0; 
+    margin-bottom: 20px; 
+ } 
+}

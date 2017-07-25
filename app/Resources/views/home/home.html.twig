@@ -2,29 +2,38 @@
 
 {% block body %}
 
-  <section class="licences__section">
-    <h1>Licences</h1>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-    <button><a href="blog/details">En savoir plus</a></button>
-  </section>
+<section class="home__section home__section--licence">
+  <div class="home__container">
+  <h1>Choisir et utiliser des librairies, API et applications en toute légalité !</h1>
+  <div class="home__content ">
+    <p class="home__licencePara">
+      Une licence de logiciel est un contrat par lequel le titulaire des droits d'auteur sur un programme informatique définit avec son cocontractant (exploitant ou utilisateur) les conditions dans lesquelles ce programme peut être utilisé, diffusé ou modifié.
+    </p>
+  </div>
+  </div>
+  <button><a href="blog/details">En savoir plus</a></button>
+  
+</section>
 
-  <section class="cdc__section">
-    <h1>Exemples de CDC</h1>
+<section class="home__section home__section--cdc">
+  <div class="home__container">
+  <h1>Consultez des exemples de cahiers des charges qui utilisent différentes licences</h1>
+  <div class="home__content">
     {% for blogpostitem in blogpost %}
-        <div class="row">
-            <div class="col-md-4 col-sm-4">
-                <h3>{{blogpostitem.title}}</h3>
-                <p>{{blogpostitem.body}}</p>
-                <p>{{blogpostitem.category}}</p>
-            </div>
-        </div>
-    {% endfor %}
-    <button><a href="blog">Voir plus d'exemples</a></button>
-  </section>
+    <div class="card text-center">
+      <div class="card-header">
+        {{blogpostitem.category}}
+      </div>
+      <div class="card-block">
+        <h4 class="card-title">{{blogpostitem.title}}</h4>
+        <p class="card-text">{{blogpostitem.body}}</p>
+      </div>
+    </div>
+  </div>
+  {% endfor %}
+  </div>
+  <button><a href="blog">Voir plus d'exemples</a></button>
+
+</section>
 
 {% endblock %}
