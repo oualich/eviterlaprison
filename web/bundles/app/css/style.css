@@ -80,15 +80,30 @@ button {
   align-self: center;
   margin-top: 20px; }
 
+.contact__section {
+  width: 80%;
+  margin: 0 auto;
+  padding: 20px 60px; }
+
 .card {
   margin-bottom: 20px; }
+  .card__container {
+    width: 80%;
+    margin: 0 auto; }
 
 .blog__header {
   display: flex;
-  justify-content: space-around; }
+  justify-content: space-around;
+  width: 80%;
+  margin: 0 auto; }
 .blog__editBtn {
   margin-top: 0;
   margin-bottom: 20px; }
+
+.licence__section {
+  width: 80%;
+  margin: 0 auto;
+  padding: 20px 60px; }
 
 ul {
   padding: 0 40px; }
