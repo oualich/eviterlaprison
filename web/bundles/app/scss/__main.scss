@@ -1,4 +1,61 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0; 
+  font-size: 15px; 
+}
+
 a {
   text-decoration: none;
   color: inherit;
+}
+
+.nav {
+  flex-direction: row;
+  font-size: 15px; 
+}
+
+.navbar {
+  margin: 0; 
+}
+
+.mainSection {
+  display: flex; 
+  flex-direction: column;
+  width: 70%; 
+  margin: 0 auto; 
+}
+
+section {
+  display: flex;
+  flex-direction: column;
+  padding: 20px 0;
+}
+
+button {
+  border-radius: 5px; 
+  color: white;
+  background-color: green; 
+  border: none;
+  padding: 5px 10px;
+
+  &:hover {
+    background-color: darkgreen; 
+
+    a {
+      color: white;
+    }
+  }
+}
+
+h1 {
+  font-size: 25px; 
+}
+
+h2 {
+  font-size: 21px;
+}
+
+h3 {
+  font-size: 18px; 
 }

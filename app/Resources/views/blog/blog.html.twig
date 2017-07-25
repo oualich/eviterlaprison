@@ -1,16 +1,22 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
+<section>
+    <div class="blog__header">
+        <h1>Les derniers articles</h1>  
+        <button class="blog__editBtn"><a href="blog/create">Editer les articles</a></button>
+    </div>
     {% for blogpostitem in blogpost %}
-        <div class="row">
-            <div class="col-md-4 col-sm-4">
-                <h3>{{blogpostitem.title}}</h3>
-                <p>{{blogpostitem.body}}</p>
-                <p>{{blogpostitem.category}}</p>
-            </div>
+    <div class="card text-center">
+        <div class="card-header">
+            {{blogpostitem.category}}
         </div>
+        <div class="card-block">
+            <h4 class="card-title">{{blogpostitem.title}}</h4>
+            <p class="card-text">{{blogpostitem.body}}</p>
+        </div>
+    </div>  
     {% endfor %}
-
-    <button><a href="blog/create">Editer les articles</a></button>
+</section>
 {% endblock %}
 

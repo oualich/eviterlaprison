@@ -1,10 +1,12 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
+<section>
     <h2 class="page-header">Créer un article</h2>
     {{ form_start(form)}}
     {{ form_widget(form)}}
     {{ form_end(form)}}
-<h2 class="page-header">Les article</h2>
-<h2 class="page-header">modifier un article</h2>
+    <h2 class="page-header">Les article</h2>
+    <h2 class="page-header">modifier un article</h2>
+</section>
 {% endblock %}

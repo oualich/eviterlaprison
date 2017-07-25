@@ -1,9 +1,30 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-size: 15px; }
+
 a {
   text-decoration: none;
   color: inherit; }
 
-h1 {
-  font-size: 20px; }
+.nav {
+  flex-direction: row;
+  font-size: 15px; }
+
+.navbar {
+  margin: 0; }
+
+.mainSection {
+  display: flex;
+  flex-direction: column;
+  width: 70%;
+  margin: 0 auto; }
+
+section {
+  display: flex;
+  flex-direction: column;
+  padding: 20px 0; }
 
 button {
   border-radius: 5px;
@@ -11,5 +32,47 @@ button {
   background-color: green;
   border: none;
   padding: 5px 10px; }
+  button:hover {
+    background-color: darkgreen; }
+    button:hover a {
+      color: white; }
+
+h1 {
+  font-size: 25px; }
+
+h2 {
+  font-size: 21px; }
+
+h3 {
+  font-size: 18px; }
+
+h1 {
+  text-align: center;
+  margin-bottom: 20px; }
+
+.p {
+  width: 70%;
+  text-align: justify;
+  margin: 0 auto; }
+
+.card {
+  width: 70%;
+  margin: 0 auto; }
+
+button {
+  align-self: center;
+  margin-top: 20px; }
+
+.card {
+  margin-bottom: 20px; }
+
+.blog__header {
+  display: flex;
+  justify-content: space-around; }
+.blog__editBtn {
+  margin-top: 0; }
+
+ul {
+  padding: 0 40px; }
 
 /*# sourceMappingURL=style.css.map */

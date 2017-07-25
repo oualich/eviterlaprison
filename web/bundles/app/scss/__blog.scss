@@ -1,0 +1,15 @@
+.card {
+  margin-bottom: 20px; 
+}
+
+.blog {
+  
+  &__header{
+    display: flex;
+    justify-content: space-around;
+  }
+
+  &__editBtn {
+    margin-top: 0; 
+ } 
+}
