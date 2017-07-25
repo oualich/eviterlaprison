@@ -6,7 +6,7 @@
         <h1>Les derniers articles</h1>
 
         {% if is_granted('ROLE_USER')  %}
-         <button class="blog__editBtn"><a href="/blog/edit">Editer les articles</a></button>
+            <a href="/blog/edit"><button class="blog__editBtn">Editer les articles</button></a>
         {% endif %}
     </div>
     <div class="card__container">
