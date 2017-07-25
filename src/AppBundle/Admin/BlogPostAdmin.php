@@ -51,8 +51,7 @@ class BlogPostAdmin extends AbstractAdmin
           ->add('category', null, array(), 'entity', array(
               'class'    => 'AppBundle\Entity\Category',
               'choice_label' => 'name', // In Symfony2: 'property' => 'name'
-          ))
-        ;
+          ));
     }
 }
 

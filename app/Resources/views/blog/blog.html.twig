@@ -3,8 +3,11 @@
 {% block body %}
 <section>
     <div class="blog__header">
-        <h1>Les derniers articles</h1>  
-        <button class="blog__editBtn"><a href="blog/create">Editer les articles</a></button>
+        <h1>Les derniers articles</h1>
+
+        {% if is_granted('ROLE_USER')  %}
+         <button class="blog__editBtn"><a href="/blog/edit">Editer les articles</a></button>
+        {% endif %}
     </div>
     <div class="card__container">
         {% for blogpostitem in blogpost %}
