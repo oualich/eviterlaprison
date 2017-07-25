@@ -46,7 +46,7 @@ doctrine:
         port: '%database_port%'
         dbname: 'eviterlaprison'
         user: 'root'
-        password: 'root'
+        password: 'simplon'
         charset: UTF8
         # if using pdo_sqlite as your database driver:
         #   1. add the path in parameters.yml
@@ -74,3 +74,11 @@ sonata_block:
         # enable the SonataAdminBundle block
         sonata.admin.block.admin_list:
             contexts: [admin]
+
+fos_user:
+    db_driver: orm # other valid values are 'mongodb' and 'couchdb'
+    firewall_name: main
+    user_class: AppBundle\Entity\User
+    from_email:
+        address: "ahmadou.gue@gmail.com"
+        sender_name: "ahmadou"
