@@ -88,8 +88,7 @@ button {
 .card {
   margin-bottom: 20px; }
   .card__container {
-    width: 80%;
-    margin: 0 auto; }
+    padding: 20px 20%; }
 
 .blog__header {
   display: flex;
