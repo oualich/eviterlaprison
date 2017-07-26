@@ -90,7 +90,7 @@ class BlogController extends Controller
 
 
     /**
-     * @Route("/blog/details", name="details_blog_post")
+     * @Route("/blog/details/", name="details_blog_post")
      */
     public function detailsAction()
     {
