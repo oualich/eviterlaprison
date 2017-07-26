@@ -110,6 +110,11 @@ button {
   margin-top: 0;
   margin-bottom: 20px; }
 
+.createArticle__section {
+  width: 60%;
+  margin: 0 auto;
+  padding: 20px 60px; }
+
 .licence__section {
   width: 80%;
   margin: 0 auto;
