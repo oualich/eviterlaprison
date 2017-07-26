@@ -82,7 +82,7 @@ class BlogController extends Controller
     /**
      * @Route("/blog/edit", name="edit_blog_post")
      */
-    public function editAction($id, Request $request)
+    public function editAction()
     {
         // replace this example code with whatever you need
         return $this->render('blog/edit_blog.html.twig');
@@ -90,7 +90,7 @@ class BlogController extends Controller
 
 
     /**
-     * @Route("/blog/details/", name="details_blog_post")
+     * @Route("/blog/details", name="details_blog_post")
      */
     public function detailsAction()
     {

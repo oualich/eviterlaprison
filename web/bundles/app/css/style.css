@@ -17,14 +17,25 @@ a {
   background-color: black;
   height: 50px;
   color: white;
-  justify-content: center; }
+  justify-content: space-around; }
   .nav__list {
     display: flex;
     list-style-type: none;
     justify-content: space-around;
     align-items: center;
-    width: 80%;
+    width: 60%;
     margin-bottom: 0; }
+  .nav__seclist {
+    padding: 0;
+    width: 20%;
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 0; }
+    .nav__seclist .weight {
+      font-weight: bold;
+      cursor: default; }
 
 .mainSection {
   display: flex;

@@ -12,3 +12,4 @@
 !var/sessions/.gitkeep
 !var/SymfonyRequirements.php
 /app/config/config.yml
+/web/bundles/app/css/style.css.map

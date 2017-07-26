@@ -21,15 +21,29 @@ a {
   background-color: black; 
   height: 50px; 
   color: white; 
-  justify-content: center;
+  justify-content: space-around;
 
   &__list {
     display: flex;
     list-style-type: none;
     justify-content: space-around;
     align-items: center;
-    width: 80%; 
-    margin-bottom: 0; 
+    width: 60%;
+    margin-bottom: 0;
+  }
+
+  &__seclist{
+    padding: 0;
+    width: 20%;
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 0;
+    .weight{
+      font-weight: bold;
+      cursor: default;
+    }
   }
 }
 
