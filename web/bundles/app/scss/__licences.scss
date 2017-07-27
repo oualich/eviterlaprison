@@ -1,13 +1,41 @@
 .licence__section {
-  width: 80%;
-  margin: 0 auto; 
   padding: 20px 60px; 
+
+  &--desc {
+    margin-bottom: 40px; 
+
+    &_list {
+      margin-top: 20px; 
+    }
+  }
+
+  &--details {
+    width: 100%; 
+    
+    &-table {
+      margin-right: 40px; 
+
+      tr:hover td {
+        color: #1b9aaa;
+        cursor: pointer;
+      }
+    }
+
+    &-articles {
+      text-align: justify;
+      align-self: flex-end;
+      align-self: center;
+
+      article {
+        p {
+          padding-left: 20px;
+        }
+
+        ul {
+          padding-left: 40px; 
+        }
+      }
+    }
+  }
 }
 
-ul {
-  padding: 0 40px; 
-}
-
-.table {
-  margin: 40px 0; 
-}

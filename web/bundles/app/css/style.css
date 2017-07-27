@@ -11,6 +11,9 @@ a {
   a:hover {
     color: white; }
 
+ul {
+  list-style-type: none; }
+
 .nav {
   display: flex;
   flex-direction: row;
@@ -97,7 +100,8 @@ button {
   margin: 0 auto;
   padding: 20px 60px;
   display: flex;
-  justify-content: center; }
+  align-items: center;
+  text-align: center; }
   .nous__section ul {
     display: flex;
     flex-direction: column; }
@@ -127,15 +131,26 @@ button {
   padding: 20px 60px; }
 
 .licence__section {
-  width: 80%;
-  margin: 0 auto;
   padding: 20px 60px; }
-
-ul {
-  padding: 0 40px; }
-
-.table {
-  margin: 40px 0; }
+  .licence__section--desc {
+    margin-bottom: 40px; }
+    .licence__section--desc_list {
+      margin-top: 20px; }
+  .licence__section--details {
+    width: 100%; }
+    .licence__section--details-table {
+      margin-right: 40px; }
+      .licence__section--details-table tr:hover td {
+        color: #1b9aaa;
+        cursor: pointer; }
+    .licence__section--details-articles {
+      text-align: justify;
+      align-self: flex-end;
+      align-self: center; }
+      .licence__section--details-articles article p {
+        padding-left: 20px; }
+      .licence__section--details-articles article ul {
+        padding-left: 40px; }
 
 .flex {
   display: flex; }
