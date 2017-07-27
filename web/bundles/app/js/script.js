@@ -10,5 +10,7 @@ var elem = document.querySelectorAll('.categ');
       elem[i].style.backgroundColor = "#EF476F"; 
     } else if (elem[i].textContent.match("Open Source")) {
       elem[i].style.backgroundColor = "#FFC43D"; 
+    } else if (elem[i].textContent.match("Droit d'auteur")) {
+      elem[i].style.backgroundColor = "#55DDE0"; 
     }
   }

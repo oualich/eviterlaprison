@@ -14,6 +14,7 @@ use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 
 
+
 class BlogController extends Controller
 {
     /**
@@ -43,6 +44,7 @@ class BlogController extends Controller
         $form = $this->createFormBuilder($blogpost) //création du formulaire
         ->add('title', TextType::class, array('label'=> 'Titre', 'attr' => array('class' => 'form-control', 'style' => 'margin-bottom:15px')) )
         ->add('body', TextareaType::class, array('label'=> 'Texte', 'attr' => array('class' => 'form-control', 'style' => 'margin-bottom:15px')) )
+        ->add('category') 
         ->add('save', SubmitType::class, array('label'=> 'Créer un article', 'attr' => array('class' => 'btn btn-primary', 'style' => 'margin-bottom:15px')) )
 
             ->getForm();
@@ -53,9 +55,11 @@ class BlogController extends Controller
             //récupérer les données
             $title = $form ['title']->getData();
             $body = $form ['body']->getData();
+            $category = $form['category']->getData(); 
 
             $blogpost->setTitle($title);
             $blogpost->setbody($body);
+            $blogpost->setCategory($category);
 
             //récupérer l'entité
             $em = $this->getDoctrine()->getManager();
