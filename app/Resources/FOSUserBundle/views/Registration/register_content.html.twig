@@ -1,0 +1,10 @@
+{% trans_default_domain 'FOSUserBundle' %}
+
+<section class="flexColumn itemsCenter">
+  {{ form_start(form, {'method': 'post', 'action': path('fos_user_registration_register'), 'attr': {'class': 'fos_user_registration_register textCenter'}}) }}
+      {{ form_widget(form) }}
+      <div>
+          <button type="submit" value="{{ 'registration.submit'|trans }}" >S'enregistrer</button>
+      </div>
+  {{ form_end(form) }}
+</section>

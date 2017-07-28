@@ -100,6 +100,7 @@ class ComposerStaticInit3fd21fac427d03795682a3726ec16667
         ),
         'A' => 
         array (
+            'App\\UserBundle\\' => 15,
             'AppBundle\\' => 10,
         ),
     );
@@ -292,6 +293,10 @@ class ComposerStaticInit3fd21fac427d03795682a3726ec16667
         'Cocur\\Slugify\\' => 
         array (
             0 => __DIR__ . '/..' . '/cocur/slugify/src',
+        ),
+        'App\\UserBundle\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/src/App/UserBundle',
         ),
         'AppBundle\\' => 
         array (
