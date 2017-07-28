@@ -20,16 +20,39 @@ class BlogController extends Controller
     /**
      * @Route("/blog", name="blog")
      */
-    public function listAction()
+    public function listAction(Request $request)
     {
-        $blogposts = $this->getDoctrine()
+
+        $blogpost = new BlogPost;
+
+        $form = $this->createFormBuilder($blogpost) //création du formulaire
+        ->add('category') 
+        ->add('save', SubmitType::class, array('label'=> 'Filtrer') )
+
+        ->getForm();
+
+        $form->handleRequest($request);
+
+        if($form->isSubmitted() && $form->isValid()){
+                    //récupérer les données
+            $category = $form['category']->getData(); 
+
+            $em = $this->getDoctrine()->getManager();
+
+            $query = $em->createQuery('SELECT u FROM AppBundle\Entity\BlogPost u WHERE u.category = :category')
+                ->setParameter('category', $category);
+            
+            $blogposts = $query->getResult(); 
+
+        } else {
+            $blogposts = $this->getDoctrine()
             ->getRepository('AppBundle:BlogPost') //récupère le dépot
             ->findAll(); //
+        }
 
-        return $this->render('blog/blog.html.twig', array(
-            'blogpost' => $blogposts
-        ));
-
+        // Render blog template
+        return $this->render('blog/blog.html.twig', array('blogpost' => $blogposts, 'form' => $form->createView()
+            ));
     }
 
 
@@ -47,7 +70,7 @@ class BlogController extends Controller
         ->add('category') 
         ->add('save', SubmitType::class, array('label'=> 'Créer un article', 'attr' => array('class' => 'btn btn-primary', 'style' => 'margin-bottom:15px')) )
 
-            ->getForm();
+        ->getForm();
 
         $form->handleRequest($request);
 
@@ -72,14 +95,14 @@ class BlogController extends Controller
             $this->addFlash(
                 'notice',
                 'Article Ajouté!'
-            );
+                );
 
-            return $this->redirectToRoute('home'); //rediriger msg vers une page
+            return $this->redirectToRoute('blog'); //rediriger msg vers une page
         }
 
         return $this->render('blog/create_blog.html.twig', array(
             'form'=>$form->createView()
-        ));
+            ));
     }
 
 
@@ -104,17 +127,17 @@ class BlogController extends Controller
         /**
      * @Route("/blog/nous", name="nous_blog_post")
      */
-    public function nousAction()
-    {
+        public function nousAction()
+        {
         // replace this example code with whatever you need
-        return $this->render('blog/nous_blog.html.twig');
-    }
+            return $this->render('blog/nous_blog.html.twig');
+        }
      /**
      * @Route("/blog/contact", name="contact_blog_post")
      */
-    public function contactAction()
-    {
+     public function contactAction()
+     {
         // replace this example code with whatever you need
-                return $this->render('blog/contact_blog.html.twig');
+        return $this->render('blog/contact_blog.html.twig');
     }
 }

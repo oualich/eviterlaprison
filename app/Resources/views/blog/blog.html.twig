@@ -2,14 +2,19 @@
 
 {% block body %}
 <section>
-    <div class="blog__header">
+    <div class="blog__header flex justifyAround">
         <h1>Les derniers articles</h1>
-
+        <div>
+            {{ form_start(form)}}
+            {{ form_widget(form)}}
+            {{ form_end(form)}}
+        </div>
         {% if is_granted('ROLE_USER')  %}
-            <a href="/blog/create"><button class="blog__editBtn">Créer un article</button></a>
+        <a href="/blog/create"><button class="blog__editBtn">Créer un article</button></a>
         {% endif %}
     </div>
     <div class="card__container">
+
         {% for blogpostitem in blogpost %}
         <div class="card text-center">
             <div class="card-header categ">
