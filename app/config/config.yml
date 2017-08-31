@@ -46,7 +46,7 @@ doctrine:
         port: '%database_port%'
         dbname: 'eviterlaprison'
         user: 'root'
-        password: 'root'
+        password: 'simplon'
         charset: UTF8
         # if using pdo_sqlite as your database driver:
         #   1. add the path in parameters.yml
@@ -62,10 +62,10 @@ doctrine:
 
 # Swiftmailer Configuration
 swiftmailer:
-    transport: '%mailer_transport%'
-    host: '%mailer_host%'
-    username: '%mailer_user%'
-    password: '%mailer_password%'
+    transport: 'gmail'
+    host: 'smtp.gmail.com'
+    username: 'ahmadou.gue@gmail.com'
+    password: 'motdepassedifficile'
     spool: { type: memory }
 
 sonata_block:
